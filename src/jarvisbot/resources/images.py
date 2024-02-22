@@ -36,20 +36,20 @@ class Images(SyncAPIResource):
         return ImagesWithStreamingResponse(self)
 
     def create_variation(
-        self,
-        *,
-        image: FileTypes,
-        model: Union[str, Literal["dall-e-2"], None] | NotGiven = NOT_GIVEN,
-        n: Optional[int] | NotGiven = NOT_GIVEN,
-        response_format: Optional[Literal["url", "b64_json"]] | NotGiven = NOT_GIVEN,
-        size: Optional[Literal["256x256", "512x512", "1024x1024"]] | NotGiven = NOT_GIVEN,
-        user: str | NotGiven = NOT_GIVEN,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+            self,
+            *,
+            image: FileTypes,
+            model: Union[str, Literal["dall-e-2"], None] | NotGiven = NOT_GIVEN,
+            n: Optional[int] | NotGiven = NOT_GIVEN,
+            response_format: Optional[Literal["url", "b64_json"]] | NotGiven = NOT_GIVEN,
+            size: Optional[Literal["256x256", "512x512", "1024x1024"]] | NotGiven = NOT_GIVEN,
+            user: str | NotGiven = NOT_GIVEN,
+            # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+            # The extra values given here take precedence over values defined on the client or passed to this method.
+            extra_headers: Headers | None = None,
+            extra_query: Query | None = None,
+            extra_body: Body | None = None,
+            timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> ImagesResponse:
         """
         Creates a variation of a given image.
@@ -109,22 +109,22 @@ class Images(SyncAPIResource):
         )
 
     def edit(
-        self,
-        *,
-        image: FileTypes,
-        prompt: str,
-        mask: FileTypes | NotGiven = NOT_GIVEN,
-        model: Union[str, Literal["dall-e-2"], None] | NotGiven = NOT_GIVEN,
-        n: Optional[int] | NotGiven = NOT_GIVEN,
-        response_format: Optional[Literal["url", "b64_json"]] | NotGiven = NOT_GIVEN,
-        size: Optional[Literal["256x256", "512x512", "1024x1024"]] | NotGiven = NOT_GIVEN,
-        user: str | NotGiven = NOT_GIVEN,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+            self,
+            *,
+            image: FileTypes,
+            prompt: str,
+            mask: FileTypes | NotGiven = NOT_GIVEN,
+            model: Union[str, Literal["dall-e-2"], None] | NotGiven = NOT_GIVEN,
+            n: Optional[int] | NotGiven = NOT_GIVEN,
+            response_format: Optional[Literal["url", "b64_json"]] | NotGiven = NOT_GIVEN,
+            size: Optional[Literal["256x256", "512x512", "1024x1024"]] | NotGiven = NOT_GIVEN,
+            user: str | NotGiven = NOT_GIVEN,
+            # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+            # The extra values given here take precedence over values defined on the client or passed to this method.
+            extra_headers: Headers | None = None,
+            extra_query: Query | None = None,
+            extra_body: Body | None = None,
+            timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> ImagesResponse:
         """
         Creates an edited or extended image given an original image and a prompt.
@@ -192,22 +192,22 @@ class Images(SyncAPIResource):
         )
 
     def generate(
-        self,
-        *,
-        prompt: str,
-        model: Union[str, Literal["dall-e-2", "dall-e-3"], None] | NotGiven = NOT_GIVEN,
-        n: Optional[int] | NotGiven = NOT_GIVEN,
-        quality: Literal["standard", "hd"] | NotGiven = NOT_GIVEN,
-        response_format: Optional[Literal["url", "b64_json"]] | NotGiven = NOT_GIVEN,
-        size: Optional[Literal["256x256", "512x512", "1024x1024", "1792x1024", "1024x1792"]] | NotGiven = NOT_GIVEN,
-        style: Optional[Literal["vivid", "natural"]] | NotGiven = NOT_GIVEN,
-        user: str | NotGiven = NOT_GIVEN,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+            self,
+            *,
+            prompt: str,
+            model: Union[str, Literal["dall-e-2", "dall-e-3"], None] | NotGiven = NOT_GIVEN,
+            n: Optional[int] | NotGiven = NOT_GIVEN,
+            quality: Literal["standard", "hd"] | NotGiven = NOT_GIVEN,
+            response_format: Optional[Literal["url", "b64_json"]] | NotGiven = NOT_GIVEN,
+            size: Optional[Literal["256x256", "512x512", "1024x1024", "1792x1024", "1024x1792"]] | NotGiven = NOT_GIVEN,
+            style: Optional[Literal["vivid", "natural"]] | NotGiven = NOT_GIVEN,
+            user: str | NotGiven = NOT_GIVEN,
+            # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+            # The extra values given here take precedence over values defined on the client or passed to this method.
+            extra_headers: Headers | None = None,
+            extra_query: Query | None = None,
+            extra_body: Body | None = None,
+            timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> ImagesResponse:
         """
         Creates an image given a prompt.
@@ -250,12 +250,13 @@ class Images(SyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return self._post(
-            "/images/generations",
+            "txt2img",  # "/images/generations",
             body=maybe_transform(
                 {
                     "prompt": prompt,
                     "model": model,
-                    "n": n,
+                    # "n": n,
+                    "n_iter": n,
                     "quality": quality,
                     "response_format": response_format,
                     "size": size,
@@ -281,20 +282,20 @@ class AsyncImages(AsyncAPIResource):
         return AsyncImagesWithStreamingResponse(self)
 
     async def create_variation(
-        self,
-        *,
-        image: FileTypes,
-        model: Union[str, Literal["dall-e-2"], None] | NotGiven = NOT_GIVEN,
-        n: Optional[int] | NotGiven = NOT_GIVEN,
-        response_format: Optional[Literal["url", "b64_json"]] | NotGiven = NOT_GIVEN,
-        size: Optional[Literal["256x256", "512x512", "1024x1024"]] | NotGiven = NOT_GIVEN,
-        user: str | NotGiven = NOT_GIVEN,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+            self,
+            *,
+            image: FileTypes,
+            model: Union[str, Literal["dall-e-2"], None] | NotGiven = NOT_GIVEN,
+            n: Optional[int] | NotGiven = NOT_GIVEN,
+            response_format: Optional[Literal["url", "b64_json"]] | NotGiven = NOT_GIVEN,
+            size: Optional[Literal["256x256", "512x512", "1024x1024"]] | NotGiven = NOT_GIVEN,
+            user: str | NotGiven = NOT_GIVEN,
+            # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+            # The extra values given here take precedence over values defined on the client or passed to this method.
+            extra_headers: Headers | None = None,
+            extra_query: Query | None = None,
+            extra_body: Body | None = None,
+            timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> ImagesResponse:
         """
         Creates a variation of a given image.
@@ -354,22 +355,22 @@ class AsyncImages(AsyncAPIResource):
         )
 
     async def edit(
-        self,
-        *,
-        image: FileTypes,
-        prompt: str,
-        mask: FileTypes | NotGiven = NOT_GIVEN,
-        model: Union[str, Literal["dall-e-2"], None] | NotGiven = NOT_GIVEN,
-        n: Optional[int] | NotGiven = NOT_GIVEN,
-        response_format: Optional[Literal["url", "b64_json"]] | NotGiven = NOT_GIVEN,
-        size: Optional[Literal["256x256", "512x512", "1024x1024"]] | NotGiven = NOT_GIVEN,
-        user: str | NotGiven = NOT_GIVEN,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+            self,
+            *,
+            image: FileTypes,
+            prompt: str,
+            mask: FileTypes | NotGiven = NOT_GIVEN,
+            model: Union[str, Literal["dall-e-2"], None] | NotGiven = NOT_GIVEN,
+            n: Optional[int] | NotGiven = NOT_GIVEN,
+            response_format: Optional[Literal["url", "b64_json"]] | NotGiven = NOT_GIVEN,
+            size: Optional[Literal["256x256", "512x512", "1024x1024"]] | NotGiven = NOT_GIVEN,
+            user: str | NotGiven = NOT_GIVEN,
+            # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+            # The extra values given here take precedence over values defined on the client or passed to this method.
+            extra_headers: Headers | None = None,
+            extra_query: Query | None = None,
+            extra_body: Body | None = None,
+            timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> ImagesResponse:
         """
         Creates an edited or extended image given an original image and a prompt.
@@ -437,22 +438,22 @@ class AsyncImages(AsyncAPIResource):
         )
 
     async def generate(
-        self,
-        *,
-        prompt: str,
-        model: Union[str, Literal["dall-e-2", "dall-e-3"], None] | NotGiven = NOT_GIVEN,
-        n: Optional[int] | NotGiven = NOT_GIVEN,
-        quality: Literal["standard", "hd"] | NotGiven = NOT_GIVEN,
-        response_format: Optional[Literal["url", "b64_json"]] | NotGiven = NOT_GIVEN,
-        size: Optional[Literal["256x256", "512x512", "1024x1024", "1792x1024", "1024x1792"]] | NotGiven = NOT_GIVEN,
-        style: Optional[Literal["vivid", "natural"]] | NotGiven = NOT_GIVEN,
-        user: str | NotGiven = NOT_GIVEN,
-        # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
-        # The extra values given here take precedence over values defined on the client or passed to this method.
-        extra_headers: Headers | None = None,
-        extra_query: Query | None = None,
-        extra_body: Body | None = None,
-        timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
+            self,
+            *,
+            prompt: str,
+            model: Union[str, Literal["dall-e-2", "dall-e-3"], None] | NotGiven = NOT_GIVEN,
+            n: Optional[int] | NotGiven = NOT_GIVEN,
+            quality: Literal["standard", "hd"] | NotGiven = NOT_GIVEN,
+            response_format: Optional[Literal["url", "b64_json"]] | NotGiven = NOT_GIVEN,
+            size: Optional[Literal["256x256", "512x512", "1024x1024", "1792x1024", "1024x1792"]] | NotGiven = NOT_GIVEN,
+            style: Optional[Literal["vivid", "natural"]] | NotGiven = NOT_GIVEN,
+            user: str | NotGiven = NOT_GIVEN,
+            # Use the following arguments if you need to pass additional parameters to the API that aren't available via kwargs.
+            # The extra values given here take precedence over values defined on the client or passed to this method.
+            extra_headers: Headers | None = None,
+            extra_query: Query | None = None,
+            extra_body: Body | None = None,
+            timeout: float | httpx.Timeout | None | NotGiven = NOT_GIVEN,
     ) -> ImagesResponse:
         """
         Creates an image given a prompt.
