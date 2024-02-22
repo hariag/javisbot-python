@@ -30,6 +30,9 @@ from ._exceptions import (
 )
 from ._utils._logs import setup_logging as _setup_logging
 
+JarvisBot = Client
+AsyncJarvisBot = AsyncClient
+
 __all__ = [
     "types",
     "__version__",
@@ -57,8 +60,8 @@ __all__ = [
     "AsyncClient",
     "Stream",
     "AsyncStream",
-    "OpenAI",
-    "AsyncOpenAI",
+    "JarvisBot",
+    "AsyncJarvisBot",
     "file_from_path",
     "BaseModel",
 ]

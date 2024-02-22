@@ -89,25 +89,25 @@ class OpenAI(SyncAPIClient):
         """Construct a new synchronous openai client instance.
 
         This automatically infers the following arguments from their corresponding environment variables if they are not provided:
-        - `api_key` from `OPENAI_API_KEY`
-        - `organization` from `OPENAI_ORG_ID`
+        - `api_key` from `JARVISBOT_API_KEY`
+        - `organization` from `JARVISBOT_ORG_ID`
         """
         if api_key is None:
-            api_key = os.environ.get("OPENAI_API_KEY")
+            api_key = os.environ.get("JARVISBOT_API_KEY")
         if api_key is None:
             raise OpenAIError(
-                "The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable"
+                "The api_key client option must be set either by passing api_key to the client or by setting the JARVISBOT_API_KEY environment variable"
             )
         self.api_key = api_key
 
         if organization is None:
-            organization = os.environ.get("OPENAI_ORG_ID")
+            organization = os.environ.get("JARVISBOT_ORG_ID")
         self.organization = organization
 
         if base_url is None:
-            base_url = os.environ.get("OPENAI_BASE_URL")
+            base_url = os.environ.get("JARVISBOT_BASE_URL")
         if base_url is None:
-            base_url = f"https://api.openai.com/v1"
+            base_url = f"https://api.jarvisbot.ai/v1"
 
         super().__init__(
             version=__version__,
@@ -287,25 +287,25 @@ class AsyncOpenAI(AsyncAPIClient):
         """Construct a new async openai client instance.
 
         This automatically infers the following arguments from their corresponding environment variables if they are not provided:
-        - `api_key` from `OPENAI_API_KEY`
-        - `organization` from `OPENAI_ORG_ID`
+        - `api_key` from `JARVISBOT_API_KEY`
+        - `organization` from `JARVISBOT_ORG_ID`
         """
         if api_key is None:
-            api_key = os.environ.get("OPENAI_API_KEY")
+            api_key = os.environ.get("JARVISBOT_API_KEY")
         if api_key is None:
             raise OpenAIError(
-                "The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable"
+                "The api_key client option must be set either by passing api_key to the client or by setting the JARVISBOT_API_KEY environment variable"
             )
         self.api_key = api_key
 
         if organization is None:
-            organization = os.environ.get("OPENAI_ORG_ID")
+            organization = os.environ.get("JARVISBOT_ORG_ID")
         self.organization = organization
 
         if base_url is None:
-            base_url = os.environ.get("OPENAI_BASE_URL")
+            base_url = os.environ.get("JARVISBOT_BASE_URL")
         if base_url is None:
-            base_url = f"https://api.openai.com/v1"
+            base_url = f"https://api.jarvisbot.ai/v1"
 
         super().__init__(
             version=__version__,
