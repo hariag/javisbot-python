@@ -192,7 +192,7 @@ class BaseAPIResponse(Generic[R]):
             return cast(R, response)
 
         if inspect.isclass(origin) and not issubclass(origin, BaseModel) and issubclass(origin, pydantic.BaseModel):
-            raise TypeError("Pydantic models must subclass our base model type, e.g. `from openai import BaseModel`")
+            raise TypeError("Pydantic models must subclass our base model type, e.g. `from jarvisbot import BaseModel`")
 
         if (
             cast_to is not object
@@ -260,7 +260,7 @@ class APIResponse(BaseAPIResponse[R]):
         the `to` argument, e.g.
 
         ```py
-        from openai import BaseModel
+        from jarvisbot import BaseModel
 
 
         class MyModel(BaseModel):
@@ -362,7 +362,7 @@ class AsyncAPIResponse(BaseAPIResponse[R]):
         the `to` argument, e.g.
 
         ```py
-        from openai import BaseModel
+        from jarvisbot import BaseModel
 
 
         class MyModel(BaseModel):

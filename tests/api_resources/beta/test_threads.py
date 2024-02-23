@@ -7,13 +7,13 @@ from typing import Any, cast
 
 import pytest
 
-from openai import OpenAI, AsyncOpenAI
+from jarvisbot import OpenAI, AsyncOpenAI
 from tests.utils import assert_matches_type
-from openai.types.beta import (
+from jarvisbot.types.beta import (
     Thread,
     ThreadDeleted,
 )
-from openai.types.beta.threads import Run
+from jarvisbot.types.beta.threads import Run
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 

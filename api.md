@@ -1,7 +1,7 @@
 # Shared Types
 
 ```python
-from openai.types import FunctionDefinition, FunctionParameters
+from jarvisbot.types import FunctionDefinition, FunctionParameters
 ```
 
 # Completions
@@ -9,7 +9,7 @@ from openai.types import FunctionDefinition, FunctionParameters
 Types:
 
 ```python
-from openai.types import Completion, CompletionChoice, CompletionUsage
+from jarvisbot.types import Completion, CompletionChoice, CompletionUsage
 ```
 
 Methods:
@@ -23,7 +23,7 @@ Methods:
 Types:
 
 ```python
-from openai.types.chat import (
+from jarvisbot.types.chat import (
     ChatCompletion,
     ChatCompletionAssistantMessageParam,
     ChatCompletionChunk,
@@ -55,7 +55,7 @@ Methods:
 Types:
 
 ```python
-from openai.types import CreateEmbeddingResponse, Embedding
+from jarvisbot.types import CreateEmbeddingResponse, Embedding
 ```
 
 Methods:
@@ -67,7 +67,7 @@ Methods:
 Types:
 
 ```python
-from openai.types import FileContent, FileDeleted, FileObject
+from jarvisbot.types import FileContent, FileDeleted, FileObject
 ```
 
 Methods:
@@ -85,7 +85,7 @@ Methods:
 Types:
 
 ```python
-from openai.types import Image, ImagesResponse
+from jarvisbot.types import Image, ImagesResponse
 ```
 
 Methods:
@@ -101,7 +101,7 @@ Methods:
 Types:
 
 ```python
-from openai.types.audio import Transcription
+from jarvisbot.types.audio import Transcription
 ```
 
 Methods:
@@ -113,7 +113,7 @@ Methods:
 Types:
 
 ```python
-from openai.types.audio import Translation
+from jarvisbot.types.audio import Translation
 ```
 
 Methods:
@@ -131,7 +131,7 @@ Methods:
 Types:
 
 ```python
-from openai.types import Moderation, ModerationCreateResponse
+from jarvisbot.types import Moderation, ModerationCreateResponse
 ```
 
 Methods:
@@ -143,7 +143,7 @@ Methods:
 Types:
 
 ```python
-from openai.types import Model, ModelDeleted
+from jarvisbot.types import Model, ModelDeleted
 ```
 
 Methods:
@@ -159,7 +159,7 @@ Methods:
 Types:
 
 ```python
-from openai.types.fine_tuning import FineTuningJob, FineTuningJobEvent
+from jarvisbot.types.fine_tuning import FineTuningJob, FineTuningJobEvent
 ```
 
 Methods:
@@ -177,7 +177,7 @@ Methods:
 Types:
 
 ```python
-from openai.types.beta import Assistant, AssistantDeleted
+from jarvisbot.types.beta import Assistant, AssistantDeleted
 ```
 
 Methods:
@@ -193,7 +193,7 @@ Methods:
 Types:
 
 ```python
-from openai.types.beta.assistants import AssistantFile, FileDeleteResponse
+from jarvisbot.types.beta.assistants import AssistantFile, FileDeleteResponse
 ```
 
 Methods:
@@ -208,7 +208,7 @@ Methods:
 Types:
 
 ```python
-from openai.types.beta import Thread, ThreadDeleted
+from jarvisbot.types.beta import Thread, ThreadDeleted
 ```
 
 Methods:
@@ -224,7 +224,7 @@ Methods:
 Types:
 
 ```python
-from openai.types.beta.threads import RequiredActionFunctionToolCall, Run
+from jarvisbot.types.beta.threads import RequiredActionFunctionToolCall, Run
 ```
 
 Methods:
@@ -241,7 +241,7 @@ Methods:
 Types:
 
 ```python
-from openai.types.beta.threads.runs import (
+from jarvisbot.types.beta.threads.runs import (
     CodeToolCall,
     FunctionToolCall,
     MessageCreationStepDetails,
@@ -261,7 +261,7 @@ Methods:
 Types:
 
 ```python
-from openai.types.beta.threads import (
+from jarvisbot.types.beta.threads import (
     MessageContentImageFile,
     MessageContentText,
     ThreadMessage,
@@ -281,7 +281,7 @@ Methods:
 Types:
 
 ```python
-from openai.types.beta.threads.messages import MessageFile
+from jarvisbot.types.beta.threads.messages import MessageFile
 ```
 
 Methods:

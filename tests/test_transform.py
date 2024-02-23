@@ -6,9 +6,9 @@ from typing_extensions import Required, Annotated, TypedDict
 
 import pytest
 
-from openai._utils import PropertyInfo, transform, parse_datetime
-from openai._compat import PYDANTIC_V2
-from openai._models import BaseModel
+from jarvisbot._utils import PropertyInfo, transform, parse_datetime
+from jarvisbot._compat import PYDANTIC_V2
+from jarvisbot._models import BaseModel
 
 
 class Foo1(TypedDict):

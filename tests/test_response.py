@@ -5,8 +5,8 @@ import httpx
 import pytest
 import pydantic
 
-from openai import OpenAI, BaseModel, AsyncOpenAI
-from openai._response import (
+from jarvisbot import OpenAI, BaseModel, AsyncOpenAI
+from jarvisbot._response import (
     APIResponse,
     BaseAPIResponse,
     AsyncAPIResponse,
@@ -14,8 +14,8 @@ from openai._response import (
     AsyncBinaryAPIResponse,
     extract_response_type,
 )
-from openai._streaming import Stream
-from openai._base_client import FinalRequestOptions
+from jarvisbot._streaming import Stream
+from jarvisbot._base_client import FinalRequestOptions
 
 
 class ConcreteBaseAPIResponse(APIResponse[bytes]):
@@ -71,7 +71,7 @@ def test_response_parse_mismatched_basemodel(client: OpenAI) -> None:
 
     with pytest.raises(
         TypeError,
-        match="Pydantic models must subclass our base model type, e.g. `from openai import BaseModel`",
+        match="Pydantic models must subclass our base model type, e.g. `from jarvisbot import BaseModel`",
     ):
         response.parse(to=PydanticModel)
 
@@ -89,7 +89,7 @@ async def test_async_response_parse_mismatched_basemodel(async_client: AsyncOpen
 
     with pytest.raises(
         TypeError,
-        match="Pydantic models must subclass our base model type, e.g. `from openai import BaseModel`",
+        match="Pydantic models must subclass our base model type, e.g. `from jarvisbot import BaseModel`",
     ):
         await response.parse(to=PydanticModel)
 

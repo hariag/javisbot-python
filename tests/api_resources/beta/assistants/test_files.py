@@ -7,10 +7,10 @@ from typing import Any, cast
 
 import pytest
 
-from openai import OpenAI, AsyncOpenAI
+from jarvisbot import OpenAI, AsyncOpenAI
 from tests.utils import assert_matches_type
-from openai.pagination import SyncCursorPage, AsyncCursorPage
-from openai.types.beta.assistants import AssistantFile, FileDeleteResponse
+from jarvisbot.pagination import SyncCursorPage, AsyncCursorPage
+from jarvisbot.types.beta.assistants import AssistantFile, FileDeleteResponse
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 

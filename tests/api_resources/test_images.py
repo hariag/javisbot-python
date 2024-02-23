@@ -7,9 +7,9 @@ from typing import Any, cast
 
 import pytest
 
-from openai import OpenAI, AsyncOpenAI
+from jarvisbot import OpenAI, AsyncOpenAI
 from tests.utils import assert_matches_type
-from openai.types import ImagesResponse
+from jarvisbot.types import ImagesResponse
 
 base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 

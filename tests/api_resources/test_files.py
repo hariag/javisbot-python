@@ -9,11 +9,11 @@ import httpx
 import pytest
 from respx import MockRouter
 
-import openai._legacy_response as _legacy_response
-from openai import OpenAI, AsyncOpenAI
+import jarvisbot._legacy_response as _legacy_response
+from jarvisbot import OpenAI, AsyncOpenAI
 from tests.utils import assert_matches_type
-from openai.types import FileObject, FileDeleted
-from openai.pagination import SyncPage, AsyncPage
+from jarvisbot.types import FileObject, FileDeleted
+from jarvisbot.pagination import SyncPage, AsyncPage
 
 # pyright: reportDeprecated=false
 

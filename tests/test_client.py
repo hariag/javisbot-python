@@ -16,13 +16,13 @@ import pytest
 from respx import MockRouter
 from pydantic import ValidationError
 
-from openai import OpenAI, AsyncOpenAI, APIResponseValidationError
-from openai._client import OpenAI, AsyncOpenAI
-from openai._models import BaseModel, FinalRequestOptions
-from openai._constants import RAW_RESPONSE_HEADER
-from openai._streaming import Stream, AsyncStream
-from openai._exceptions import OpenAIError, APIStatusError, APITimeoutError, APIResponseValidationError
-from openai._base_client import DEFAULT_TIMEOUT, HTTPX_DEFAULT_TIMEOUT, BaseClient, make_request_options
+from jarvisbot import OpenAI, AsyncOpenAI, APIResponseValidationError
+from jarvisbot._client import OpenAI, AsyncOpenAI
+from jarvisbot._models import BaseModel, FinalRequestOptions
+from jarvisbot._constants import RAW_RESPONSE_HEADER
+from jarvisbot._streaming import Stream, AsyncStream
+from jarvisbot._exceptions import OpenAIError, APIStatusError, APITimeoutError, APIResponseValidationError
+from jarvisbot._base_client import DEFAULT_TIMEOUT, HTTPX_DEFAULT_TIMEOUT, BaseClient, make_request_options
 
 from .utils import update_env
 

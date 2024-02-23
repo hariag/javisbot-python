@@ -32,7 +32,7 @@ $ pip install -r requirements-dev.lock
 ## Modifying/Adding code
 
 Most of the SDK is generated code, and any modified code will be overridden on the next generation. The
-`src/openai/lib/` and `examples/` directories are exceptions and will never be overridden.
+`src/jarvisbot/lib/` and `examples/` directories are exceptions and will never be overridden.
 
 ## Adding and running examples
 
@@ -59,7 +59,7 @@ If you’d like to use the repository from source, you can either install from g
 To install via git:
 
 ```bash
-pip install git+ssh://git@github.com:openai/openai-python.git
+pip install git+ssh://git@github.com:jarvisbot-ai/jarvisbot-python.git
 ```
 
 Alternatively, you can build from source and install the wheel file:
@@ -86,7 +86,7 @@ Most tests will require you to [setup a mock server](https://github.com/stopligh
 
 ```bash
 # you will need npm installed
-npx prism path/to/your/openapi.yml
+npx prism path/to/your/jarvisbot.yml
 ```
 
 ```bash

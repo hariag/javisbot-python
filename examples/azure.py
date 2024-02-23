@@ -1,4 +1,4 @@
-from openai import AzureOpenAI
+from jarvisbot import AzureOpenAI
 
 # may change in the future
 # https://learn.microsoft.com/en-us/azure/ai-services/openai/reference#rest-api-versioning

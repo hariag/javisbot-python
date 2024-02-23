@@ -7,7 +7,7 @@ from typing import TYPE_CHECKING, Iterator, AsyncIterator
 
 import pytest
 
-from openai import OpenAI, AsyncOpenAI
+from jarvisbot import OpenAI, AsyncOpenAI
 
 if TYPE_CHECKING:
     from _pytest.fixtures import FixtureRequest
