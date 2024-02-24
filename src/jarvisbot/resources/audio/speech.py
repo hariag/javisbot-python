@@ -79,12 +79,12 @@ class Speech(SyncAPIResource):
           timeout: Override the client-level default timeout for this request, in seconds
         """
         return self._post(
-            "/audio/speech",
+            "/tts",
             body=maybe_transform(
                 {
-                    "input": input,
+                    "text": input,
                     "model": model,
-                    "voice": voice,
+                    "speaker_id": voice,
                     "response_format": response_format,
                     "speed": speed,
                 },

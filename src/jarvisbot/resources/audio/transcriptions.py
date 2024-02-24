@@ -87,27 +87,33 @@ class Transcriptions(SyncAPIResource):
 
           timeout: Override the client-level default timeout for this request, in seconds
         """
+        import base64
+        b64_file = base64.b64encode(open(file, "rb").read()).decode()
         body = deepcopy_minimal(
             {
-                "file": file,
+                #"file": file,
+                "files": b64_file,
                 "model": model,
-                "language": language,
+                #"language": language,
+                "lang": language,
+                "input_format": "mp3",
                 "prompt": prompt,
                 "response_format": response_format,
                 "temperature": temperature,
                 "timestamp_granularities": timestamp_granularities,
             }
         )
-        files = extract_files(cast(Mapping[str, object], body), paths=[["file"]])
-        if files:
-            # It should be noted that the actual Content-Type header that will be
-            # sent to the server will contain a `boundary` parameter, e.g.
-            # multipart/form-data; boundary=---abc--
-            extra_headers = {"Content-Type": "multipart/form-data", **(extra_headers or {})}
+        # files = extract_files(cast(Mapping[str, object], body), paths=[["file"]])
+        # if files:
+        #     # It should be noted that the actual Content-Type header that will be
+        #     # sent to the server will contain a `boundary` parameter, e.g.
+        #     # multipart/form-data; boundary=---abc--
+        #     extra_headers = {"Content-Type": "multipart/form-data", **(extra_headers or {})}
         return self._post(
-            "/audio/transcriptions",
+            # "/audio/transcriptions",
+            "/asr",
             body=maybe_transform(body, transcription_create_params.TranscriptionCreateParams),
-            files=files,
+#            files=files,
             options=make_request_options(
                 extra_headers=extra_headers, extra_query=extra_query, extra_body=extra_body, timeout=timeout
             ),
